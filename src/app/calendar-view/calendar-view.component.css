@@ -1,0 +1,61 @@
+.calendar-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+}
+
+.calendar-day-header,
+.calendar-day {
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.calendar-day-header {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.calendar-day {
+    min-height: 100px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.calendar-day.today {
+    background-color: #f0f8ff;
+}
+
+.calendar-day .appointment {
+    background-color: #e3f2fd;
+    padding: 5px;
+    margin: 2px 0;
+    border-radius: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}

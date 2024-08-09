@@ -1,0 +1,35 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Select Appointment Time</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="onNoClick()"></button>
+    </div>
+
+    <div class="modal-body">
+        <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput formControlName="title" required />
+                <mat-error *ngIf="appointmentForm.get('title')?.hasError('required')">
+                    Title is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Time</mat-label>
+                <input matInput formControlName="time" placeholder="HH:mm" required />
+                <mat-error *ngIf="appointmentForm.get('time')?.hasError('required')">
+                    Time is required
+                </mat-error>
+            </mat-form-field>
+
+        </form>
+
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onNoClick()">
+            Close
+        </button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()">Save changes</button>
+    </div>
+</div>
